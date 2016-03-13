@@ -1,0 +1,8 @@
+<?xml version="1.0"?>
+<launch>
+  <arg name="robot_ip" />
+  <include file="$(find motoman_sia_support)/launch/robot_state_visualize_sia10.launch.xml">
+    <arg name="robot_ip" value="$(arg robot_ip)" />
+    <arg name="controller" value="fs100" />
+  </include>
+</launch>

@@ -1,0 +1,34 @@
+<?xml version="1.0"?>
+<launch>
+  <arg name="robot_ip" value="127.0.0.1"/>
+  <arg name="dx100" value="dx100"/>
+  <arg name="fs100" value="fs100"/>
+
+  <group ns="robot_interface_streaming_sia5">
+    <group ns="dx100">
+      <include file="$(find motoman_sia_support)/launch/robot_interface_streaming_sia5.launch.xml">
+        <arg name="robot_ip"   value="$(arg robot_ip)"/>
+        <arg name="controller" value="$(arg dx100)"/>
+      </include>
+    </group>
+
+    <group ns="fs100">
+      <include file="$(find motoman_sia_support)/launch/robot_interface_streaming_sia5.launch.xml">
+        <arg name="robot_ip"   value="$(arg robot_ip)"/>
+        <arg name="controller" value="$(arg fs100)"/>
+      </include>
+    </group>
+  </group>
+
+  <group ns="robot_interface_streaming_sia5d">
+    <include file="$(find motoman_sia_support)/launch/robot_interface_streaming_sia5d.launch">
+      <arg name="robot_ip" value="$(arg robot_ip)"/>
+    </include>
+  </group>
+
+  <group ns="robot_interface_streaming_sia5f">
+    <include file="$(find motoman_sia_support)/launch/robot_interface_streaming_sia5f.launch">
+      <arg name="robot_ip" value="$(arg robot_ip)"/>
+    </include>
+  </group>
+</launch>

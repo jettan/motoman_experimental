@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+<launch>
+  <group ns="load_sia20">
+    <include file="$(find motoman_sia_support)/launch/load_sia20.launch"/>
+  </group>
+
+  <group ns="test_sia20">
+    <include file="$(find motoman_sia_support)/launch/test_sia20.launch"/>
+  </group>
+</launch>
